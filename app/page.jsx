@@ -1,28 +1,14 @@
-import Link from "next/link";
+import {MovieList} from "@/components/movie-list"
 
-export default function Home() {
+export default async function Home() {
+  // const movies = await getMovies()
+
   return (
-    <div className="min-h-screen flex justify-center items-center">
-      <div className="flex flex-col">
-        <span className="bg-blue-600 text-6xl">Hello World</span>
-        <div className="mt-5 space-x-5 flex justify-center">
-          <Link href="/contact">
-            <button className="border border-white px-4 py-2 rounded-xl cursor-pointer">
-              Contact
-            </button>
-          </Link>
-          <Link href="/games">
-            <button className="border border-white px-4 py-2 rounded-xl cursor-pointer">
-              Games
-            </button>
-          </Link>
-          <Link href="/service">
-            <button className="border border-white px-4 py-2 rounded-xl cursor-pointer">
-              Service
-            </button>
-          </Link>
-          </div>
-        </div>
+    <div className="flex flex-col min-h-screen">
+      <main className="flex-grow container mx-auto px-4 py-8">
+        <h2 className="text-3xl font-bold mb-6">Featured Movies</h2>
+        <MovieList />
+      </main>
     </div>
-  );
+  )
 }
